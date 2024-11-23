@@ -22,14 +22,21 @@ export default function Home() {
       />
 
       {/* Do not modify this file. Modify @/components/PopoverMenu/index.tsx to
-          make the following work. When `onItemClick` is provided, it should
-          allow `onClick` to be optional. However if `onItemClick` is not
-          provided, Typescript should enforce `onClick` in each item.
+          make the following work.
           
-          Ensure that the item argument holds exactly what the item is, the
-          `color` key should be allowed and not underlined. And putting mouse
-          over `item.color` in the fallback, Typescript should show that the
-          only possibilities for color is "red" or "blue". */}
+          We want to add a new parent level prop `onItemClick` to `PopoverMenu`.
+          This is an optional prop. If provided, it makes `onClick` inside each
+          item optional. If it is not provided, then `onClick` should be
+          required in each item.
+
+          
+          Ensure that Typescript sees the exact type of `item`, when `item` is
+          hovered in `onItemClick`. So putting mouse over `item.color` in the
+          fallback, Typescript should show that the only possibilities for color
+          is "red" or "blue". The `item` should also be "open" and allow any
+          props, not just "color", I should be able to add anything I want, like
+          "animal".
+      */}
       <PopoverMenu
         label="Goal"
         items={[
