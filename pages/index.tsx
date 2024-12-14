@@ -26,9 +26,11 @@ export default function Home() {
           
           We want to add a new parent level prop `onItemClick` to `PopoverMenu`.
           This is an optional prop. If provided, it makes `onClick` inside each
-          item optional. If it is not provided, then `onClick` should be
-          required in each item.
+          item optional. If `onItemClick` is not provided, then
+          `onClick` should be required in each item.
 
+          If an item has `onClick`, clicking it calls it. If an item does not
+          have `onClick`, clicking it should call `onItemClick` with the item.
           
           Ensure that Typescript sees the exact type of `item`, when `item` is
           hovered in `onItemClick`. So putting mouse over `item.color` in the
