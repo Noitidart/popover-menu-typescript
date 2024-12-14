@@ -60,6 +60,29 @@ export default function Home() {
           console.log('Fallback, you clicked item with color:', item.color)
         }
       />
+
+      {/* This is another example that should also work */}
+      <PopoverMenu
+        label="Another Goal"
+        items={[
+          {
+            label: 'A',
+            groupId: 'default',
+            id: 'a',
+            onClick: () => console.log('You clicked A'),
+            animal: 'lion' as const
+          },
+          {
+            label: 'B',
+            groupId: 'default',
+            id: 'b',
+            animal: 'tiger' as const
+          }
+        ]}
+        onItemClick={item =>
+          console.log('Fallback, you clicked item with animal:', item.animal)
+        }
+      />
     </main>
   );
 }
